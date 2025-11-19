@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const auth = require('../middleware/authMiddleware');
+const role = require('../middleware/roleMiddleware');
+const controller = require('../controllers/clearanceController');
+router.post('/', auth, controller.createClearance);
+router.get('/', auth, controller.getClearances);
+router.get('/:id', auth, controller.getClearance);
+router.put('/:id', auth, role(['admin']), controller.updateClearance);
+router.delete('/:id', auth, role(['admin']), controller.deleteClearance);
+module.exports = router;
