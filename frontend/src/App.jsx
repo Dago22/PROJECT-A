@@ -24,11 +24,11 @@ export default function App() {
 
       <div className="p-6">
         <Routes>
-          {/* Public Routes */}
+          {/* Public routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Protected Routes */}
+          {/* Protected routes with Clerk */}
           <Route
             path="/"
             element={
@@ -106,7 +106,7 @@ export default function App() {
             }
           />
 
-          {/* Catch-all redirect if not signed in */}
+          {/* Redirect if not signed in */}
           <Route
             path="*"
             element={
