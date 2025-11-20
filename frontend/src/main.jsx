@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'   // <-- fix if App is jsx
+import App from './App.jsx'
 import './index.css'
 
 // Import your Publishable Key
@@ -15,3 +15,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
+
