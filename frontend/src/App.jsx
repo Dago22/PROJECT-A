@@ -24,11 +24,11 @@ export default function App() {
 
       <div className="p-6">
         <Routes>
-          {/* Public routes */}
+          {/* Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Protected routes with Clerk */}
+          {/* Protected Routes */}
           <Route
             path="/"
             element={
@@ -39,6 +39,7 @@ export default function App() {
               </SignedIn>
             }
           />
+
           <Route
             path="/admin"
             element={
@@ -49,6 +50,7 @@ export default function App() {
               </SignedIn>
             }
           />
+
           <Route
             path="/admin/documents"
             element={
@@ -59,6 +61,7 @@ export default function App() {
               </SignedIn>
             }
           />
+
           <Route
             path="/clearances"
             element={
@@ -69,6 +72,7 @@ export default function App() {
               </SignedIn>
             }
           />
+
           <Route
             path="/create"
             element={
@@ -79,6 +83,7 @@ export default function App() {
               </SignedIn>
             }
           />
+
           <Route
             path="/profile"
             element={
@@ -89,6 +94,7 @@ export default function App() {
               </SignedIn>
             }
           />
+
           <Route
             path="/upload"
             element={
@@ -100,8 +106,15 @@ export default function App() {
             }
           />
 
-          {/* Redirect if not signed in */}
-          <Route path="*" element={<SignedOut><RedirectToSignIn /></SignedOut>} />
+          {/* Catch-all redirect if not signed in */}
+          <Route
+            path="*"
+            element={
+              <SignedOut>
+                <RedirectToSignIn />
+              </SignedOut>
+            }
+          />
         </Routes>
       </div>
     </div>
